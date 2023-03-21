@@ -3,7 +3,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Shopping-List</title>
   </head>
-  <body></body>
+  <body>
+    <h1>Shopping-List</h1>
+    <form action="add" method="get">
+      <label for="">Add Item</label>
+      <input type="text" name="item" />
+      <input id="addNeed" type="submit" value="Need" />
+      <input id="addHave" type="submit" value="Have" />
+    </form>
+    <h2>Need:</h2>
+    <ul class="list">
+      <li>
+        <input type="checkbox" name="item" />Milk <a href="#">&#10006;</a>
+      </li>
+      <li>
+        <input type="checkbox" name="item" />Eggs <a href="#">&#10006;</a>
+      </li>
+      <li>
+        <input type="checkbox" name="item" />Chicken <a href="#">&#10006;</a>
+      </li>
+      <li>
+        <input type="checkbox" name="item" />Potatos <a href="#">&#10006;</a>
+      </li>
+    </ul>
+  </body>
 </html>
