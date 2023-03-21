@@ -13,3 +13,4 @@
 - [ ] make remove btn
 - [ ] 1 input for add item
 - [ ] make two btn for: NEED and HAVE
+- [ ] checkbox for every item
