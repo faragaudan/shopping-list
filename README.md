@@ -1,5 +1,8 @@
 # shopping-list
 
+An app that allows you to create a shopping list with your daily shopping needs. In the app we can add, mark and delete products.
+This app was made using HTML, CSS and JavaScript.
+
 ## TEAM
 
 - [Faragau Dan](https://github.com/faragaudan)
