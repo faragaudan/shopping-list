@@ -1,0 +1,63 @@
+body {
+  background-color: darkgray;
+  width: 600px;
+  margin: 0 auto;
+  padding: 0;
+  font-family: monospace, "cursive";
+}
+
+form {
+  color: aquamarine;
+  font-size: 22px;
+}
+
+input[type="text"] {
+  background-color: bisque;
+}
+
+#addNeed {
+  background-color: bisque;
+  color: aqua;
+}
+
+#addHave {
+  background-color: bisque;
+  color: aqua;
+}
+
+h1 {
+  color: blueviolet;
+  font-size: 50px;
+}
+
+h2 {
+  color: darkgoldenrod;
+  font-size: 42px;
+  letter-spacing: -2px;
+  text-align: left;
+}
+
+.list {
+  color: #555;
+  font-size: 22px;
+  padding: 0 !important;
+  width: 500px;
+  border: 1.3px solid #dedede;
+}
+
+.list li {
+  list-style: none;
+  background-color: bisque;
+  border-bottom: 1.3px dotted #ccc;
+  text-indent: 25px;
+  height: auto;
+  padding: 10px;
+  text-transform: capitalize;
+  color: aqua;
+}
+
+li a {
+  float: right;
+  text-decoration: none;
+  color: red;
+}
