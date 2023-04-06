@@ -4,7 +4,8 @@ body {
   margin: 0 auto;
   padding: 0;
   font-family: monospace, "cursive";
-  background-image: url(shopping\ list.jpg);
+  /* background-image: url(shopping\ list.jpg); */
+  /* TO DO SIZE */
 }
 
 form {
