@@ -7,47 +7,12 @@
     <link rel="stylesheet" href="shopping.css" />
   </head>
   <body>
-    <h1>Shopping-List</h1>
-    <form action="add" method="get">
-      <label for="">Add Item</label>
-      <input type="text" name="item" />
-      <input id="addNeed" type="submit" value="Need" />
-      <input id="addHave" type="submit" value="Have" />
-    </form>
-    <h2>Need:</h2>
-    <ul class="list">
-      <li>
-        <input type="checkbox" name="item" />Milk <a href="#">&#10006;</a>
-      </li>
-      <li>
-        <input type="checkbox" name="item" />Eggs <a href="#">&#10006;</a>
-      </li>
-      <li>
-        <input type="checkbox" name="item" />Chicken <a href="#">&#10006;</a>
-      </li>
-      <li>
-        <input type="checkbox" name="item" />Potatos <a href="#">&#10006;</a>
-      </li>
-    </ul>
-    <h2>Have:</h2>
-    <ul class="list">
-      <li>
-        <input type="checkbox" name="item" checked />Cream
-        <a href="#">&#10006;</a>
-      </li>
-      <li>
-        <input type="checkbox" name="item" checked />Cheese
-        <a href="#">&#10006;</a>
-      </li>
-      <li>
-        <input type="checkbox" name="item" checked />Mango
-        <a href="#">&#10006;</a>
-      </li>
-      <li>
-        <input type="checkbox" name="item" checked />Steak
-        <a href="#">&#10006;</a>
-      </li>
-    </ul>
+    <div class="container">
+      <h1>Shopping List</h1>
+      <p id="intro">Remember get these when go shopping!</p>
+      <input id="userinput" type="text" placeholder="enter items" />
+      <button id="enter">Add</button>
+    </div>
     <script src="shoppinj.js"></script>
   </body>
 </html>
