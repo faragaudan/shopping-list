@@ -11,9 +11,9 @@ This app was made using HTML, CSS and JavaScript.
 ## TODO:
 
 - [ ] HTML structure
-- [ ] choose between background color
+- [ ] choose between background color and img
 - [ ] choose between text colors
-- [ ] make remove btn
+- [ ] make delete btn
 - [ ] 1 input for add item
-- [ ] make two btn for: NEED and HAVE
-- [ ] checkbox for every item
+- [ ] make one btn for: Add
+- [ ] marking the products added to the bag
