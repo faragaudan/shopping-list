@@ -4,22 +4,22 @@ body {
 }
 
 .Box {
-  width: 500px;
-  margin: 30px auto;
+  width: 600px;
+  margin: 35px auto;
   background: rgba(255, 255, 255, 0.6);
   text-align: center;
-  padding: 15px;
-  border-radius: 20px;
+  padding: 10px;
+  border-radius: 25px;
   border: 7px solid rgb(91, 31, 31);
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 60px;
   text-shadow: 5px 3px 2px #556;
 }
 
 #intro {
-  font-size: 1.1em;
+  font-size: 20px;
   color: rgb(109, 39, 39);
   font-weight: bold;
 }
@@ -58,7 +58,6 @@ span {
   position: relative;
 }
 
-span::before,
 span::after {
   content: "";
   position: absolute;
