@@ -17,3 +17,5 @@ This app was made using HTML, CSS and JavaScript.
 - [ ] 1 input for add item
 - [ ] make one btn for: Add
 - [ ] marking the products added to the bag
+- [ ] aliniere ( cele 4 rafturi)
+- [ ] salvate in localstorage
