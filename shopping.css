@@ -58,6 +58,7 @@ span {
   position: relative;
 }
 
+span::before,
 span::after {
   content: "";
   position: absolute;

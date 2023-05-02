@@ -42,10 +42,10 @@ function createListElement() {
   //Create the delete button calling the funtion with the new li
   createDeleteButton(li);
   //Updates the selector to the new number of buttons with class=delete
-  deleteButton = documet.querySelectorAll(".delete");
+  deleteButton = document.querySelectorAll(".delete");
 
   //Applies the functionality to remove the li
-  updateDeleteButton();
+  updateDeleteButtons();
 
   //add the click listener to toggle class=done
   li.addEventListener("click", toggleDoneClass);
@@ -59,3 +59,33 @@ function addListAfterClick() {
     createListElement();
   }
 }
+
+function addListAfterKeypress(event) {
+  if (inputLength() > 0 && event.keyCode === 13) {
+    createListElement();
+  }
+}
+
+//Applies the functionality to remove the li to all the buttons (new and old)
+function updateDeleteButtons() {
+  for (var i = 0; i < deleteButton.length; i++) {
+    deleteButton[i].addEventListener("click", function () {
+      this.parentNode.remove();
+    });
+  }
+}
+
+button.addEventListener("click", addListAfterClick);
+
+input.addEventListener("keypress", addListAfterKeypress);
+
+//INIT
+//Add the event listener and create the delete buttons to the initial lis
+for (var i = 0; i < lis.length; i++) {
+  lis[i].addEventListener("click", toggleDoneClass);
+  createDeleteButton(lis[i]);
+}
+//Selector of initial buttons with class = delete
+deleteButton = document.querySelectorAll(".delete");
+//It gives the buttons with class the function to remove the li(todo)
+updateDeleteButtons();
