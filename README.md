@@ -24,4 +24,4 @@ This is a shopping list, created with HTML, CSS and jd
 - [ ] make delete btn
 - [ ] 1 input for add item
 - [ ] make one btn for: Add
-- [ ] marking the products added to the bag
+- [ ] marking the products added to the bag (coming soon)
