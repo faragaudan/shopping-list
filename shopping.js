@@ -5,22 +5,19 @@ var ul = document.querySelector("ul");
 var lis = document.querySelectorAll("li");
 //Create a variable for future delete buttons
 var deleteButton;
-let list = [];
+let list = JSON.parse(localStorage.getItem("list")) || [];
 
-//Return Length of input
 function inputLength() {
   return input.value.length;
 }
 
-//Create delete buttons and append it to their parents(li)
 function createDeleteButton(parent) {
-  //Create element button
   var button = document.createElement("button");
-  // Create and append text inside button
+
   button.appendChild(document.createTextNode("✖"));
-  // Give class=delete to buttons - Its's going to be used to select them in the future
+
   button.className = "delete";
-  // append or insert the button to the parent element(li)
+
   parent.appendChild(button);
 }
 
@@ -31,46 +28,56 @@ function toggleDoneClass() {
 
 //Create the "li" with everything it needs inside of it(text ,button, class)
 function createListElement(value) {
-  var li = document.createElement("li");
-  var span = document.createElement("span");
-  // Create text for the li according to what you put in the input
-  li.appendChild(span);
-  span.appendChild(document.createTextNode(value));
-  // Append or insert the new li to the ul
-  ul.appendChild(li);
-
-  createDeleteButton(li);
-  //Updates the selector to the new number of buttons with class=delete
-  deleteButton = document.querySelectorAll(".delete");
-
-  //Applies the functionality to remove the li
-  updateDeleteButtons();
-
-  //add the click listener to toggle class=done
-  li.addEventListener("click", toggleDoneClass);
+  return `<li>
+    <span>${value}</span>
+    <button data-name=${value} class="delete">✖</button>
+  </li>`;
 }
 
 function displayList() {
-  list = JSON.parse(localStorage.getItem("list"));
   console.log(list);
   //createListElement();
-  list.forEach((element) => createListElement(element));
+  const htmlList = list.map(createListElement);
+  let initialList = document.querySelector("ul");
+  initialList.innerHTML = htmlList.join("");
+  deleteButton = document.querySelectorAll(".delete");
+
+  updateDeleteButtons();
+
+  // //add the click listener to toggle class=done
+  //li.addEventListener("click", toggleDoneClass);
 }
 
 function addListAfterClick() {
   if (inputLength() > 0) {
-    createListElement(input.value);
+    let initialList = document.querySelector("ul");
+    initialList.innerHTML =
+      initialList.innerHTML + createListElement(input.value);
+    deleteButton = document.querySelectorAll(".delete");
+    updateDeleteButtons();
+
     list.push(input.value);
-    localStorage.setItem("list", JSON.stringify(list));
+    saveList(list);
+
     input.value = "";
   }
 }
 
+function saveList(list) {
+  localStorage.setItem("list", JSON.stringify(list));
+}
+
 function addListAfterKeypress(event) {
   if (inputLength() > 0 && event.keyCode === 13) {
+    let initialList = document.querySelector("ul");
+    initialList.innerHTML =
+      initialList.innerHTML + createListElement(input.value);
+    deleteButton = document.querySelectorAll(".delete");
+    updateDeleteButtons();
+
     createListElement(input.value);
     list.push(input.value);
-    localStorage.setItem("list", JSON.stringify(list));
+    saveList(list);
     input.value = "";
   }
 }
@@ -78,13 +85,10 @@ function addListAfterKeypress(event) {
 //Applies the functionality to remove the li to all the buttons (new and old)
 function updateDeleteButtons() {
   for (var i = 0; i < deleteButton.length; i++) {
-    deleteButton[i].addEventListener("click", function () {
+    deleteButton[i].addEventListener("click", function (e) {
       this.parentNode.remove();
-      const newList = list.filter(
-        (item) => item !== this.parentNode.innerText.replace("✖", "")
-      );
-      localStorage.setItem("list", JSON.stringify(newList));
-      console.log(newList);
+      list = list.filter((item) => item !== e.target.getAttribute("data-name"));
+      saveList(list);
     });
   }
 }
@@ -93,19 +97,13 @@ button.addEventListener("click", addListAfterClick);
 
 input.addEventListener("keypress", addListAfterKeypress);
 
-//INIT
-//Add the event listener and create the delete buttons to the initial lis
 for (var i = 0; i < lis.length; i++) {
   lis[i].addEventListener("click", toggleDoneClass);
   createDeleteButton(lis[i]);
 }
-//Selector of initial buttons with class = delete
+
 deleteButton = document.querySelectorAll(".delete");
-//It gives the buttons with class the function to remove the li(todo)
+
 updateDeleteButtons();
 
-//localStorage.setItem("list", JSON.stringify(["capsune"]))
-
 displayList();
-
-//how save array list in local storage
